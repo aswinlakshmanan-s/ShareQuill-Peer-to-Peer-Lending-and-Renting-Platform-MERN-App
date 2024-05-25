@@ -1,0 +1,167 @@
+@import 'config';
+
+
+*{
+    font-family: $font-family;
+}
+
+@mixin cardView{
+    background-color: rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: 2rem;
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.progress{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 0.6rem;
+}
+.progress-bar{
+    background-color: $login-color-pink;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+
+.card, .modal-content, .form-control{
+    @include cardView();
+    img{
+        width: 20% !important;
+    }
+    a{
+        text-decoration: none;
+        color: $login-color-pink;
+    }
+    .btn{
+        background-color: $login-color-pink;
+    }
+}
+
+.modal-content{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control::placeholder{
+    color: #fff;
+}
+
+
+.custom-width-form{
+    width: 100% !important;
+}
+
+.btn:disabled{
+    cursor: not-allowed;
+    pointer-events: painted;
+}
+
+@media screen and (min-width: 768px) {
+    .custom-width-form{
+        width: 60% !important;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .custom-width-form{
+        width: 25% !important;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .custom-width-form{
+        width: 20% !important;
+    }
+}
+
+footer {
+    background: $footer-background;
+    color: $footer-text-color;
+
+    .footertop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 0rem;
+
+        .namelogo1 {
+            font-size: 1.3rem;
+            color: $footer-text-color;
+            text-decoration: none;
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 800;
+            max-width: 40%;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 15px;
+
+            a {
+                text-decoration: none;
+                color: $footer-text-color;
+                font-weight: 500;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .footerbottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        // margin-top: 30px;
+        font-size: small;
+    }
+}
+
+.scroll-to-top {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    img {
+        width: 40px; 
+        height: auto; 
+        background-color: $button-background-color;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    &:hover {
+        img {
+            background-color: $button-hover-color;
+        }
+    }
+}
+

@@ -1,0 +1,49 @@
+@keyframes slide-menu {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes show-x {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menu-item-anim {
+    from {
+        transform: translateY(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes neonLight {
+    0%,18%,18.5%,20.1%,31%,32%,33%,34%,35%,30%,50%,51%,52%,53%,54%,55%,56%,57%,58%,59%,60%,60.1%,20%,50.1%,60%,65.1%,80%,90.1%,92% 
+    {
+        filter: none
+    }
+    18.1%,65%,80.1%,90%,92.1%,100%  
+    {
+        filter: drop-shadow(0px 0px 12px rgb(148, 64, 245))
+        
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}

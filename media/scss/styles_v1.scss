@@ -1,0 +1,397 @@
+@import 'config';
+@import '_anim';
+@import '_responsive';
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+
+/* Hide the scrollbar while allowing scrolling */
+body::-webkit-scrollbar {
+    width: 0rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the scrollbar thumb transparent */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the scrollbar track transparent */
+}
+
+/* Hide the scrollbar while allowing scrolling */
+body::-webkit-scrollbar {
+    width: 0rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the scrollbar thumb transparent */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the scrollbar track transparent */
+}
+
+body {
+    background-image: url('../images/background_image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-color: black;
+
+    .carousel-section {
+        width: 100%;
+        height: 80vh;
+        display: block;
+
+        .carousel-inner {
+            display: block;
+        }
+        .carousel-img {
+            filter: drop-shadow(30px 10px 4px #000000);
+            animation: neonLight 1s linear infinite;
+            width: 65% !important;
+        }
+    }
+
+}
+
+#parallax {
+    // border: 1px solid black;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/"),url("../images/icons/2.png"), url("../images/icons/3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 50% 50%;
+  }
+.animated-button {
+    display: flex;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 10px;
+    // border: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.animated-button:hover {
+    background-color: $login-color-pink;
+    color: #000000;
+}
+
+.loginbtn{
+    display: flex;
+    margin-right: 30px;
+    margin-top: 16px;
+    float: right;
+}
+
+.dashbtn{
+    border: 1px solid white;
+    border-radius: 5px;
+    color:white
+}
+
+.dashbtn:hover {
+    background-color: $login-color-pink;
+}
+
+nav {
+    position: fixed;
+    padding: 2em;
+    background: black;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: none;
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: right;
+
+    .close-button {
+        float: right;
+        width: 32px;
+        cursor: pointer;
+        color: white;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 10% auto 0 auto;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        width: 80%;
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        li {
+            opacity: 0;
+        }
+    }
+}
+
+header {
+    height: 72px;
+    .logo{
+        display: flex;
+        margin-left: 5rem;
+        margin-top: 0.5rem;
+        width: 6.5rem;
+        height: auto;
+        float: left;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .menu-button {
+        display: flex;
+        margin-right: 60px;
+        margin-top: 28px;
+        float: right;
+        cursor: pointer;
+        color: #ffffff;
+    }
+}
+
+
+
+.show-menu {
+    display: block;
+    animation: slide-menu 1s ease-in forwards;
+
+    .close-button {
+        animation: show-x 1s 1s forwards;
+    }
+
+    li:nth-of-type(1) {
+        animation: menu-item-anim .6s forwards 1s ease-in-out;
+    }
+    li:nth-of-type(2) {
+        animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+    }
+    li:nth-of-type(3) {
+        animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+    }
+    li:nth-of-type(4) {
+        animation: menu-item-anim .6s forwards 1.6s ease-in-out;
+    }
+}
+
+footer {
+    background: $footer-background;
+    color: $footer-text-color;
+
+    a {
+        text-decoration: none;
+    }
+
+    .footertop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 0rem;
+
+        .namelogo1 {
+            font-size: 1.3rem;
+            color: $footer-text-color;
+            text-decoration: none;
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 800;
+            max-width: 40%;
+            margin-bottom: 2rem;
+        }
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 15px;
+
+            a {
+                text-decoration: none;
+                color: $footer-text-color;
+                font-weight: 500;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .footerbottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        // margin-top: 30px;
+        font-size: small;
+    }
+}
+
+.scroll-to-top {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    img {
+        width: 40px; 
+        height: auto; 
+        background-color: $button-background-color;
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    &:hover {
+        img {
+            background-color: $button-hover-color;
+        }
+    }
+}
+
+.card-display {
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    .card {
+        border-radius: 1rem;
+        border: 1px solid transparent;
+        backdrop-filter: blur(1rem);
+        box-shadow: 1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        padding: 0% 2% 3% 2%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 18rem;
+    }
+
+    .mt-x {
+        margin-top: 30%;
+    }
+    
+    .glass-effect {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .card-img-top {
+        margin-top: -40%;
+        width: 70%;
+    }
+
+    .btn-float {
+        margin-top: 8%;
+        border-radius: 2rem;
+    }
+    .btn-float:hover {
+        box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+    }
+
+    .spinner-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .spinner-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.btn-float {
+    margin-top: 8%;
+    border-radius: 2rem;
+}
+.btn-float:hover {
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.namelogo1 {
+    width: 10%;
+}
+
+.footerbtn{
+    text-decoration: none;
+    border: none;
+
+}
+
+.footerbtn{
+    text-decoration: none;
+    border: none;
+    margin-bottom: 10px;
+
+}
+.footerbtn:hover{
+    background-color: transparent;
+}
+
+.toast{
+    display: block;
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    background-color: $login-color-pink;
+    float: right;
+    color: #000000;
+    font-size: medium;
+}
+.toast-header{
+    background-color: $login-color-pink;
+    color: #000000;
+    font-size: large;
+}
+
+@media (max-width: 768px) {
+    .toast {
+        bottom: 100px;
+        right: 10px;
+    }
+
+    .toast-header {
+        font-size: medium;
+    }
+}
+
+/* Responsive styles for even smaller screens */
+@media (max-width: 576px) {
+    .toast {
+        margin-right: 10px;
+        bottom: 80px;
+        right: 10px;
+        font-size: small;
+    }
+
+    .toast-header {
+        font-size: small;
+    }
+}
+
+
+
+
